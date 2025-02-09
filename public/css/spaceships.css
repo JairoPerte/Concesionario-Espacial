@@ -1,0 +1,164 @@
+main {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+table {
+  margin: 0 auto;
+  width: 80%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+thead {
+  background-color: #007bff;
+  color: white;
+}
+th,
+td {
+  padding: 15px;
+  text-align: left;
+}
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+tbody tr:hover {
+  background-color: #ddd;
+  transition: 0.3s;
+}
+th {
+  text-transform: uppercase;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(205, 114, 2);
+}
+
+/* Estilos generales para los botones */
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  color: white;
+}
+
+/* Botón de Añadir */
+.button.add {
+  background-color: #4caf50; /* Verde */
+}
+.button.add:hover {
+  background-color: #43a047;
+}
+
+/* Botón de Editar */
+.button.edit {
+  background-color: #ffc107; /* Amarillo */
+  color: #333;
+}
+.button.edit:hover {
+  background-color: #ffb300;
+}
+
+/* Botón de Borrar */
+.button.delete {
+  background-color: #f44336; /* Rojo */
+}
+.button.delete:hover {
+  background-color: #d32f2f;
+}
+
+/* Iconos dentro de los botones */
+.button i {
+  font-size: 18px;
+}
+
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.pagination button {
+  padding: 5px 10px;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.pagination button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* Contenedor del select */
+.select-container {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  text-align: center;
+  font-size: 16px;
+}
+
+/* Caja visible con el número y la flecha */
+.select-display {
+  cursor: pointer;
+  background: white;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Flecha */
+.arrow {
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Rotación de la flecha al hacer clic */
+.arrow.rotate {
+  transform: rotate(180deg);
+}
+
+/* Lista de opciones oculta por defecto */
+.select-options {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.select-options.show {
+  display: block;
+}
+
+/* Opciones */
+.select-options li {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.select-options li:hover {
+  background: #f0f0f0;
+}

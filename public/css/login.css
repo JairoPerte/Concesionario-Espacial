@@ -1,0 +1,153 @@
+html,
+body {
+  margin: 0;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-y: auto;
+}
+
+#card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(225, 236, 247);
+  width: 30%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 10px;
+  box-shadow: 12px 0 15px rgb(225, 236, 247);
+}
+
+.icono {
+  border: 2px solid black;
+  border-radius: 50px;
+  width: 80px;
+  height: auto;
+}
+
+/* Contenedor del formulario */
+form {
+  width: 350px;
+  max-width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Contenedor de input y etiqueta */
+.input {
+  position: relative;
+  width: 100%;
+  height: 45px;
+}
+
+/* Campo de entrada */
+.input_field {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 2px solid rgb(8, 8, 255);
+  color: rgb(31, 104, 160);
+  outline: none;
+  background: none;
+  box-sizing: border-box;
+}
+
+/* Etiqueta que estará en un placeholder hasta q se clicke */
+.input_label {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: rgb(70, 86, 116);
+  pointer-events: none;
+  transition: 0.3s ease all;
+}
+
+/* Estado flotante al enfocar o rellenar del placeholder */
+.input_field:focus ~ .input_label,
+.input_field:not(:placeholder-shown) ~ .input_label {
+  top: 5px;
+  font-size: 11px;
+  color: rgb(8, 8, 255);
+}
+
+/* Mensaje de error */
+.error-box {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  background-color: #ffdddd;
+  color: #d8000c;
+  border: 1px solid #d8000c;
+  padding: 10px;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+}
+.error-box .icon {
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+/* Botón */
+button {
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: rgb(8, 8, 255);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: rgb(8, 8, 180);
+}
+
+/* Grupo de enlaces */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  gap: 15px;
+}
+
+.button-group a {
+  font-size: 14px;
+  color: rgb(8, 8, 255);
+  text-decoration: none;
+  transition: color 0.1s ease-in;
+}
+
+.button-group a:hover {
+  color: rgb(22, 22, 94);
+}
+
+#image_right {
+  z-index: -1;
+  background-image: url("/img/spaceships/spaceship.jpg");
+  background-size: cover;
+  width: 70%;
+  height: 100%;
+}
+
+@media (max-width: 750px) {
+  #card {
+    width: 100%;
+  }
+  #image_right {
+    width: 0;
+  }
+}

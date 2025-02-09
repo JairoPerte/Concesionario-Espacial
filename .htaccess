@@ -1,0 +1,12 @@
+#Por si usamos apache
+RewriteEngine On
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteRule ^(.*)$ /public/index.php [L]
+
+<Directory />
+    Require all denied
+</Directory>
+
+<Directory "C:/Users/jairo/Downloads/Descargas/Archivos/Trabajos/Visual Studio Code/Concesionario-Espacial/public">
+    Require all granted
+</Directory>

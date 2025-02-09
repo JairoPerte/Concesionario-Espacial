@@ -1,0 +1,198 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100vh;
+  background-color: #f9f9f9;
+  overflow-y: hidden;
+}
+
+/* Menú lateral fijo */
+.menu {
+  width: 250px;
+  background-color: #f4f4f4;
+  padding: 20px;
+  position: fixed;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Links del menú */
+.menu a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Indicador de selección */
+.menu a.active {
+  color: #007bff;
+}
+
+.menu a.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 5px;
+  height: 100%;
+  background-color: #007bff;
+  border-radius: 5px;
+}
+
+/* Contenido desplazable */
+.content {
+  margin-left: 270px;
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 30px;
+  height: 100%;
+}
+
+/* Secciones con más espacio */
+.section {
+  margin-bottom: 40px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: white;
+}
+
+/* ====== FORMULARIO DE DATOS ====== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Ajuste de inputs dentro de la sección */
+.section input[type="text"],
+.section input[type="password"],
+.section input[type="file"] {
+  width: calc(100% - 20px); /* Evita que sobresalga del borde */
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: 0.3s ease-in-out;
+  margin-bottom: 10px; /* Espaciado entre inputs */
+}
+
+.section input[type="text"]:focus,
+.section input[type="password"]:focus,
+.section input[type="file"]:focus {
+  width: calc(100% - 20px); /* Evita que sobresalga del borde */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: 0.3s ease-in-out;
+  margin-bottom: 10px; /* Espaciado entre inputs */
+}
+
+/* Botón de confirmar cambios */
+button {
+  padding: 12px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* Botón azul general */
+button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* ====== SECCIÓN ELIMINAR DATOS ====== */
+/* Contenedor de botones */
+.delete-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+}
+
+/* Botón rojo para eliminar cuenta */
+#delete-account-btn {
+  background-color: #dc3545;
+  width: 200px;
+  color: white;
+}
+
+#delete-account-btn:hover {
+  background-color: #a71d2a;
+}
+
+/* Botón amarillo-naranja para cerrar sesión */
+#logout-btn {
+  background-color: #ffc107;
+  width: 200px;
+  color: black;
+}
+
+#logout-btn:hover {
+  background-color: #e0a800;
+}
+
+/* ====== POPUP ELIMINAR CUENTA ====== */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .menu {
+    width: 200px;
+  }
+
+  .content {
+    margin-left: 220px;
+  }
+}
+
+#error {
+  color: #a71d2a;
+}
+
+#confirm-delete:disabled {
+  background-color: #ccc;
+  color: #333;
+}
+#confirm-delete {
+  background-color: #a71d2a;
+  color: #ddd;
+}

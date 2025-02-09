@@ -1,0 +1,70 @@
+body, html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+main{
+    min-height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 0;
+    text-align: center;
+    color: white;
+}
+
+.video-fondo {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    object-fit: cover;
+    opacity: 0.9;
+}
+
+.contenido-texto{
+    margin-top: 50vh;
+    transform: translateY(-50%);
+}
+
+.contenido-texto>.title{
+    font-size: xx-large;
+    text-transform: uppercase;
+}
+
+/*Animación texto*/
+.title-word {
+    animation: color-animation 3.5s linear infinite;
+}
+  
+.title-word-1 {
+  --color-1: #a3542c;
+  --color-2: #20789e;
+  --color-3: #854f4c;
+}
+
+.title-word-2 {
+  --color-1: #9a7524;
+  --color-2: #64a19a;
+  --color-3: #042325;
+}
+
+.title-word-3 {
+  --color-1: #669e96;
+  --color-2: #a12e2a;
+  --color-3: #81aca7;
+}
+
+@keyframes color-animation {
+  0%    {color: var(--color-1); font-family: "Montserrat", sans-serif;}
+  32%   {color: var(--color-1)}
+  33%   {color: var(--color-2); font-family: Impact, sans-serif;}
+  65%   {color: var(--color-2)}
+  66%   {color: var(--color-3); font-family: Georgia, serif;}
+  99%   {color: var(--color-3)}
+  100%  {color: var(--color-1); font-family: 'Franklin Gothic Medium', sans-serif;}
+}
